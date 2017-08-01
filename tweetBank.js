@@ -3,7 +3,7 @@ const data = [];
 
 function add (name, content) {
   let rand = Math.floor(Math.random() * 100) + "";
-  console.log("ID type: " + typeof rand);
+  //console.log("ID type: " + typeof rand);
   data.push({ name: name, content: content, id: rand });
 }
 
