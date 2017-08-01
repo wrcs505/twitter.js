@@ -10,12 +10,15 @@ router.get('/', function (req, res) {
 
 router.get( '/users/:name', function (req, res) {
   // let user = tweetBank.find({req.params.name, req.params.content});
-  console.log(Array.isArray(tweetBank.list()));
-  let tweets = tweetBank.list().forEach(function(tweetObj) {
-    // console.log(tweetObj)
-    if (tweetObj.name === req.params.name) return tweetObj;
+  // console.log(Array.isArray(tweetBank.list()));
+  let tweets = tweetBank.list().map(function(tweetObj) {
+    // console.log(tweetObj.name)
+    let namer = tweetObj.name.split(' ')[0].toLowerCase();
+    console.log(req.params.name, namer);
+    // console.log(typeof req.params.name)
+    if (namer === req.params.name) return tweetObj;
   });
-  console.log(tweets);
+  // console.log(tweets);
   res.render( 'index', { tweets: tweets } );
   // console.log( req.params.content ); // --> 'nimit'
 });
