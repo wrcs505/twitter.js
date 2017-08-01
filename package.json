@@ -12,6 +12,8 @@
   "dependencies": {
     "chalk": "^2.0.1",
     "express": "^4.15.3",
+    "lodash": "^4.17.4",
+    "morgan": "^1.8.2",
     "nunjucks": "^3.0.1"
   }
 }
