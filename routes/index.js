@@ -9,18 +9,28 @@ router.get('/', function (req, res) {
 });
 
 router.get( '/users/:name', function (req, res) {
-  // let user = tweetBank.find({req.params.name, req.params.content});
+  //let user = tweetBank.find({req.params.name, req.params.content});
   // console.log(Array.isArray(tweetBank.list()));
-  let tweets = tweetBank.list().map(function(tweetObj) {
+  //let tweets = tweetBank.list().map(function(tweetObj) {
     // console.log(tweetObj.name)
-    let namer = tweetObj.name.split(' ')[0].toLowerCase();
-    console.log(req.params.name, namer);
+    //let namer = tweetObj.name.split(' ')[0].toLowerCase();
+    //console.log(req.params.name, namer);
     // console.log(typeof req.params.name)
-    if (namer === req.params.name) return tweetObj;
-  });
+    //if (namer === req.params.name) return tweetObj;
+  //});
+
+  var name = req.params.name;
+  var tweets = tweetBank.find( {name: name} );
   // console.log(tweets);
   res.render( 'index', { tweets: tweets } );
   // console.log( req.params.content ); // --> 'nimit'
+});
+
+router.get( '/tweets/:id', function (req, res) {
+  var id = req.params.id;
+  //console.log(id);
+  var tweet = tweetBank.find( {id: id} );
+  res.render( 'index', { tweet: tweet } );
 });
 
 module.exports = router;
