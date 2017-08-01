@@ -7,10 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "author": "brick squad",
+  "author": "nucky thompson",
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.0.1",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "nunjucks": "^3.0.1"
   }
 }
