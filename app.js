@@ -13,6 +13,8 @@ nunjucks.configure('views', {
 
 }); // point nunjucks to the proper directory for templates
 
+app.use(express.static('public'));
+
 app.use('/', routes);
 
 /*
